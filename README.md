@@ -11,17 +11,17 @@ Clone this repository into your Eclipse workspace.
 Create `Constants.java` inside `src/com/example/android_oauth`. Here's what it should look like:
 
 ``` java
-	package com.example.android_oauth;
+package com.example.android_oauth;
 
-	public class Constants {
-	  public static final String CONSUMER_KEY = ""; // get key and secret from dev.twitter.com
-	  public static final String CONSUMER_SECRET = "";
-	  public static final String REQUEST_URL = "https://api.twitter.com/oauth/request_token";
-	  public static final String AUTHORIZE_URL = "https://api.twitter.com/oauth/authorize";
-	  public static final String ACCESS_URL = "https://api.twitter.com/oauth/access_token";
-	  public static final String CALLBACK_URL = "appName://callback";
-	  public static final String OAUTH_CALLBACK_SCHEME = "appName";
-	}
+public class Constants {
+  public static final String CONSUMER_KEY = ""; // get key and secret from dev.twitter.com
+  public static final String CONSUMER_SECRET = "";
+  public static final String REQUEST_URL = "https://api.twitter.com/oauth/request_token";
+  public static final String AUTHORIZE_URL = "https://api.twitter.com/oauth/authorize";
+  public static final String ACCESS_URL = "https://api.twitter.com/oauth/access_token";
+  public static final String CALLBACK_URL = "appName://callback";
+  public static final String OAUTH_CALLBACK_SCHEME = "appName";
+}
 ```
 
 Create a redirecting website
@@ -47,17 +47,17 @@ Open or create a new Android project. Follow [these](http://developer.android.co
 In your main application's `AndroidManifest.xml`, add the following:
 
 ``` xml
-		<activity android:name="com.example.oauth_example.MainOAuthActivity"
-				android:label="@string/app_name" />
+<activity android:name="com.example.oauth_example.MainOAuthActivity"
+		android:label="@string/app_name" />
 
-		<activity android:name="com.example.oauth_example.PrepareRequestTokenActivity" android:launchMode="singleTask">>
-			<intent-filter>
-				<action android:name="android.intent.action.VIEW" />
-				<category android:name="android.intent.category.DEFAULT" />
-				<category android:name="android.intent.category.BROWSABLE" />
-				<data android:scheme="appName" android:host="callback" />
-			</intent-filter>
-		</activity>
+<activity android:name="com.example.oauth_example.PrepareRequestTokenActivity" android:launchMode="singleTask">>
+	<intent-filter>
+		<action android:name="android.intent.action.VIEW" />
+		<category android:name="android.intent.category.DEFAULT" />
+		<category android:name="android.intent.category.BROWSABLE" />
+		<data android:scheme="appName" android:host="callback" />
+	</intent-filter>
+</activity>
 ```
 
 Anywhere you'd like to launch the OAuth dance, start the `MainOAuthActivity` intent:
@@ -72,8 +72,8 @@ I built a simple Twitter api wrapper to help get you started (`src/com/example/a
 Once a user is authenticated, you can start making authenticated HTTP requests. Sample usage:
 
 ``` java
-		Twitter twitter = new Twitter(MainOAuthActivity.this);
-		twitter.updateStatus("updating twitter from a droid app #xcool");
+Twitter twitter = new Twitter(MainOAuthActivity.this);
+twitter.updateStatus("updating twitter from a droid app #xcool");
 ```
 
 
