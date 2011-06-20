@@ -63,8 +63,8 @@ In your main application's `AndroidManifest.xml`, add the following:
 Anywhere you'd like to launch the OAuth dance, start the `MainOAuthActivity` intent:
 
 ``` java
-		Intent myIntent = new Intent(MainActivity.this, MainOAuthActivity.class);
-		MainActivity.this.startActivity(myIntent);
+Intent myIntent = new Intent(MainActivity.this, MainOAuthActivity.class);
+MainActivity.this.startActivity(myIntent);
 ```
 
 I built a simple Twitter api wrapper to help get you started (`src/com/example/android_oauth/Twitter.java`). Feel free to add to it, or build your own.
