@@ -10,6 +10,7 @@ Clone this repository into your Eclipse workspace.
 
 Create `Constants.java` inside `src/com/example/android_oauth`. Here's what it should look like:
 
+``` java
 	package com.example.android_oauth;
 
 	public class Constants {
@@ -44,6 +45,7 @@ Open or create a new Android project. Follow [these](http://developer.android.co
 
 In your main application's `AndroidManifest.xml`, add the following:
 
+``` xml
 		<activity android:name="com.example.oauth_example.MainOAuthActivity"
 				android:label="@string/app_name" />
 
@@ -58,6 +60,7 @@ In your main application's `AndroidManifest.xml`, add the following:
 
 Anywhere you'd like to launch the OAuth dance, start the `MainOAuthActivity` intent:
 
+``` java
 		Intent myIntent = new Intent(MainActivity.this, MainOAuthActivity.class);
 		MainActivity.this.startActivity(myIntent);
 
@@ -65,6 +68,7 @@ I built a simple Twitter api wrapper to help get you started (`src/com/example/a
 
 Once a user is authenticated, you can start making authenticated HTTP requests. Sample usage:
 
+``` java
 		Twitter twitter = new Twitter(MainOAuthActivity.this);
 		twitter.updateStatus("updating twitter from a droid app #xcool");
 
