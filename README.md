@@ -22,6 +22,7 @@ Create `Constants.java` inside `src/com/example/android_oauth`. Here's what it s
 	  public static final String CALLBACK_URL = "appName://callback";
 	  public static final String OAUTH_CALLBACK_SCHEME = "appName";
 	}
+```
 
 Create a redirecting website
 
@@ -57,12 +58,14 @@ In your main application's `AndroidManifest.xml`, add the following:
 				<data android:scheme="appName" android:host="callback" />
 			</intent-filter>
 		</activity>
+```
 
 Anywhere you'd like to launch the OAuth dance, start the `MainOAuthActivity` intent:
 
 ``` java
 		Intent myIntent = new Intent(MainActivity.this, MainOAuthActivity.class);
 		MainActivity.this.startActivity(myIntent);
+```
 
 I built a simple Twitter api wrapper to help get you started (`src/com/example/android_oauth/Twitter.java`). Feel free to add to it, or build your own.
 
@@ -71,5 +74,6 @@ Once a user is authenticated, you can start making authenticated HTTP requests. 
 ``` java
 		Twitter twitter = new Twitter(MainOAuthActivity.this);
 		twitter.updateStatus("updating twitter from a droid app #xcool");
+```
 
 
