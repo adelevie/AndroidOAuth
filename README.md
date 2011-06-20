@@ -96,6 +96,13 @@ In your main application's `AndroidManifest.xml`, add the following:
 </activity>
 ```
 
+Thanks
+------
+
+[Matthias Käppler](http://brainflush.wordpress.com/) for developing [android-signpost](http://code.google.com/p/oauth-signpost/), which makes it easy to sign HTTP requests for OAuth.
+
+[Doityourselfandroid](http://blog.doityourselfandroid.com/), whose [tutorial](http://blog.doityourselfandroid.com/2010/11/10/oauth-flow-in-android-app/) this project is largely based on.
+
 License
 -------
 
