@@ -24,7 +24,9 @@ public class Constants {
 }
 ```
 
-Create a redirecting website
+Create a redirecting website. [Why?](http://stackoverflow.com/questions/2199357/oauth-twitter-on-android-callback-fails/2401135#2401135)
+
+These are instructions for setting up a Rails app and deploying to Heroku, but you can use any language/framework you want. Just be sure that you have a public-facing url that redirects to `appName://callback`.
 
 	rails new RedirectSite
 	cd RedirectSite
