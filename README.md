@@ -3,10 +3,36 @@ AndroidOAuth
 
 Work in progess.
 
+Usage
+-----
+
+Anywhere you'd like to launch the OAuth dance, start the `MainOAuthActivity` intent:
+
+``` java
+Intent myIntent = new Intent(MainActivity.this, MainOAuthActivity.class);
+MainActivity.this.startActivity(myIntent);
+```
+
+I built a simple Twitter api wrapper to help get you started (`src/com/example/android_oauth/Twitter.java`). Feel free to add to it, or build your own.
+
+Once a user is authenticated, you can start making authenticated HTTP requests. Sample usage:
+
+``` java
+Twitter twitter = new Twitter(MainOAuthActivity.this);
+twitter.updateStatus("updating twitter from a droid app #xcool");
+```
+
 Installation
 ------------
 
-Clone this repository into your Eclipse workspace.
+### Clone this repository into your Eclipse workspace.
+
+```
+cd workspace
+git clone git@github.com:adelevie/AndroidOAuth.git
+```
+
+### Add OAuth token and secret
 
 Create `Constants.java` inside `src/com/example/android_oauth`. Here's what it should look like:
 
@@ -24,7 +50,9 @@ public class Constants {
 }
 ```
 
-Create a redirecting website. [Why?](http://stackoverflow.com/questions/2199357/oauth-twitter-on-android-callback-fails/2401135#2401135)
+### Create a redirecting website
+
+[Why?](http://stackoverflow.com/questions/2199357/oauth-twitter-on-android-callback-fails/2401135#2401135)
 
 These are instructions for setting up a Rails app and deploying to Heroku, but you can use any language/framework you want. Just be sure that you have a public-facing url that redirects to `appName://callback`.
 
@@ -46,6 +74,8 @@ Copy the url of the app, and go to dev.twitter.com and register your application
 
 Open or create a new Android project. Follow [these](http://developer.android.com/guide/developing/projects/projects-eclipse.html) instructions for referencing a library project in Eclipse.
 
+### Declare Activities in Manifest
+
 In your main application's `AndroidManifest.xml`, add the following:
 
 ``` xml
@@ -60,22 +90,6 @@ In your main application's `AndroidManifest.xml`, add the following:
 		<data android:scheme="appName" android:host="callback" />
 	</intent-filter>
 </activity>
-```
-
-Anywhere you'd like to launch the OAuth dance, start the `MainOAuthActivity` intent:
-
-``` java
-Intent myIntent = new Intent(MainActivity.this, MainOAuthActivity.class);
-MainActivity.this.startActivity(myIntent);
-```
-
-I built a simple Twitter api wrapper to help get you started (`src/com/example/android_oauth/Twitter.java`). Feel free to add to it, or build your own.
-
-Once a user is authenticated, you can start making authenticated HTTP requests. Sample usage:
-
-``` java
-Twitter twitter = new Twitter(MainOAuthActivity.this);
-twitter.updateStatus("updating twitter from a droid app #xcool");
 ```
 
 License
