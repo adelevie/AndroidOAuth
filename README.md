@@ -50,7 +50,7 @@ In your main application's `AndroidManifest.xml`, add the following:
 <activity android:name="com.example.oauth_example.MainOAuthActivity"
 		android:label="@string/app_name" />
 
-<activity android:name="com.example.oauth_example.PrepareRequestTokenActivity" android:launchMode="singleTask">>
+<activity android:name="com.example.oauth_example.PrepareRequestTokenActivity" android:launchMode="singleTask">
 	<intent-filter>
 		<action android:name="android.intent.action.VIEW" />
 		<category android:name="android.intent.category.DEFAULT" />
