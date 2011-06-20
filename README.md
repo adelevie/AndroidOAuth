@@ -34,7 +34,7 @@ git clone git@github.com:adelevie/AndroidOAuth.git
 
 ### Add dependencies
 
-Download `signpost-core` and `signpost-commonshttp` [here](http://code.google.com/p/oauth-signpost/downloads/list). Follow [these](http://www.wikihow.com/Add-JARs-to-Project-Build-Paths-in-Eclipse-(Java)) instructions to add these .jars to the `AndroidOAuth` project.
+Download `signpost-core` and `signpost-commonshttp` [here](http://code.google.com/p/oauth-signpost/downloads/list). Follow [these](http://www.wikihow.com/Add-JARs-to-Project-Build-Paths-in-Eclipse-(Java) instructions to add these .jars to the `AndroidOAuth` project.
 
 ### Add OAuth token and secret
 
