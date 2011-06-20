@@ -65,6 +65,7 @@ I built a simple Twitter api wrapper to help get you started (`src/com/example/a
 
 Once a user is authenticated, you can start making authenticated HTTP requests. Sample usage:
 
-		twitter.updateStatus("updating twitter from a droid app #cool");
+		Twitter twitter = new Twitter(MainOAuthActivity.this);
+		twitter.updateStatus("updating twitter from a droid app #xcool");
 
 
